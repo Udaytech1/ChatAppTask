@@ -24,7 +24,7 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, currentUsername }) =
       ]}
     >
       {!isSystem && (
-        <Text style={styles.username}>
+        <Text style={[styles.username, isCurrentUser && styles.currentUserUsername]}>
           {isCurrentUser ? 'You' : message.username}
         </Text>
       )}

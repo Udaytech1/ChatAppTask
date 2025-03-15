@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   currentUserMessage: {
     alignSelf: 'flex-end',
-    backgroundColor: '#007AFF',
+    backgroundColor: '#d4ddfa',
   },
   otherUserMessage: {
     alignSelf: 'flex-start',
@@ -24,6 +24,9 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 4,
     color: '#666',
+  },
+  currentUserUsername: {
+    color: '#060e2b',
   },
   messageText: {
     fontSize: 16,

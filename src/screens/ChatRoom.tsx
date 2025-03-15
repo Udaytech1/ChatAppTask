@@ -41,13 +41,14 @@ const ChatRoom: React.FC<Props> = ({ navigation, route }) => {
     connectWebSocket();
 
     websocketService.onMessage((message: WebSocketMessage) => {
+      console.log('message', message);
       if (message.event === 'message') {
         setMessages((prev) => [
           ...prev,
           {
-            id: Date.now().toString(),
-            content: message.content,
-            username: message.username || 'Unknown',
+            id: message?.message?.id || '',
+            content: message.message?.content || '',
+            username: message.message?.username || '' || 'Unknown',
             roomId,
             timestamp: new Date().toISOString(),
           },

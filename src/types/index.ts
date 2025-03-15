@@ -20,6 +20,7 @@ export interface Message {
 export interface WebSocketMessage {
   event: 'message' | 'join' | 'leave';
   content: string;
+  message?: Message;
   username?: string;
 }
 

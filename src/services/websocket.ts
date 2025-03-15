@@ -3,8 +3,10 @@ import { WebSocketMessage } from '../types';
 export class WebSocketService {
   private ws: WebSocket | null = null;
   private messageHandler: ((message: WebSocketMessage) => void) | null = null;
+  private currentUsername: string | null = null;
 
   connect(roomId: string, username: string): Promise<void> {
+    this.currentUsername = username;
     return new Promise((resolve, reject) => {
       this.ws = new WebSocket(
         `wss://chat-api-k4vi.onrender.com/ws/${roomId}/${username}`
@@ -47,6 +49,7 @@ export class WebSocketService {
       const message: WebSocketMessage = {
         event: 'message',
         content,
+        username: this.currentUsername || 'Unknown'
       };
       console.log('sendMessage', message);
       this.ws.send(JSON.stringify(message));
