@@ -94,3 +94,10 @@ src/
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## Demo 
+I am adding demo video. Please go and watch of features.
+
+https://youtube.com/shorts/iCSSSb_05SY?si=8MkQI2WUOVDODYXC
+
+## App link
